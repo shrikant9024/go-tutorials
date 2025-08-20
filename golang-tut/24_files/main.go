@@ -130,7 +130,8 @@ func main() {
 	// 	panic(err)
 	// }
 
-	if err := os.Remove("sample.txt"); err != nil {
+	if err := os.Remove("sample.txt"); err != nil { //single line
+
 		panic(err)
 	}
 
