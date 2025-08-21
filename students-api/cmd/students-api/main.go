@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/shrikant9024/go-tutorials/internal/config"
+	"github.com/shrikant9024/go-tutorials/internal/http/handlers/student"
 )
 
 func main() {
@@ -22,10 +23,12 @@ func main() {
 	//router setup
 	router := http.NewServeMux()
 
-	router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Welcome to the server"))
+	// router.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+	// 	w.Write([]byte("Welcome to the server"))
 
-	})
+	// })
+
+	router.Handle("POST /api/students", student.New())
 
 	//setup server
 	server := http.Server{
